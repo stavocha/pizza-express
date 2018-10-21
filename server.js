@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const generateId = require('./lib/generate-id');
 
 var redis = require("redis"),
-client = redis.createClient('6379');
+    client = redis.createClient('6379');
 
 
 app.use(express.static('static'));
@@ -45,11 +45,12 @@ if (!module.parent) {
   app.listen(app.get('port'), () => {
     console.log(`${app.locals.title} is running on ${app.get('port')}.`);
     console.log(`putting key 'somekey' with value in redis and getting it: `);
+
     client.set("somekey", "successful test");
     client.get("somekey", function(err, reply) {
-     // reply is null when the key is missing
-     console.log(reply);
-   });
+      // reply is null when the key is missing
+      console.log(reply);
+    });
   });
 }
 
