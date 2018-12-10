@@ -1,0 +1,4 @@
+FROM pizza-express:latest
+
+ADD test/ test
+ENTRYPOINT ["npm", "test"]

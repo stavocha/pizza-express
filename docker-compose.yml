@@ -1,5 +1,14 @@
 version: '3'
 services:
+  tests:
+    image: tests:latest
+    build:
+      dockerfile: Dockerfile-test
+      context: .
+    depends_on:
+      - node_pizza
+    environment:
+      - REDIS_HOST=redis
   node_pizza:
     image: pizza-express:latest
     build:
