@@ -8,7 +8,7 @@ const generateId = require('./lib/generate-id');
 
 var redis = require("redis"),
    client = redis.createClient({
-     host: process.env.REDIS_HOST || '127.0.0.1'
+    host: process.env.REDIS_HOST || '127.0.0.1'
     });	
 
 

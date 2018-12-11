@@ -1,4 +1,4 @@
 FROM pizza-express:latest
 
-ADD test/ test
+COPY test ./test
 ENTRYPOINT ["npm", "test"]
